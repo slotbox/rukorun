@@ -158,6 +158,9 @@ describe('rukorun', function(){
 
         it('should send heartbeats', function(done){
           expect(commands).to.include('heartbeat');
+          command.write(JSON.stringify({
+            type: 'stop'
+          }));
           done();
         });
 
